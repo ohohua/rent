@@ -2,11 +2,14 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:rent/pages/home/index.dart';
 import 'package:rent/pages/login.dart';
+import 'package:rent/pages/not_found.dart';
+import 'package:rent/pages/room_detail/index.dart';
 
 class Routes {
   // 定义路由名称
   static String home = "/";
   static String login = "/login";
+  static String roomDetail = "/room_detail/:roomId";
 
   // 定义路由处理函数
   static final Handler homeHandler = Handler(
@@ -19,9 +22,21 @@ class Routes {
     return const LoginPage();
   });
 
+  static final Handler roomDetailHandler = Handler(
+      handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+    return RoomDetailPage(roomId: params['roomId']![0]);
+  });
+
+  static final Handler notFoundHandler = Handler(
+      handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+    return const NotFountPage();
+  });
+
   //  编写函数configureRoutes关联路由名称和处理函数
   static void configureRoutes(FluroRouter router) {
     router.define(home, handler: homeHandler);
     router.define(login, handler: loginHandler);
+    router.define(roomDetail, handler: roomDetailHandler);
+    router.notFoundHandler = notFoundHandler; // 404
   }
 }

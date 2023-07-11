@@ -22,7 +22,17 @@ class PageContent extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, Routes.login);
               },
-              child: Text(Routes.login))
+              child: Text(Routes.login)),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, 'room_detail/122');
+              },
+              child: const Text('带参数的路由')),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/not');
+              },
+              child: const Text('不存在的路由'))
         ],
       ),
     );
