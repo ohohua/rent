@@ -71,6 +71,17 @@ class LoginPage extends StatelessWidget {
                       const EdgeInsets.fromLTRB(100, 20, 100, 20))),
               child: const Text('登录'),
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('还没有账号？'),
+              TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'register');
+                  },
+                  child: const Text('去注册'))
+            ],
           )
         ],
       ),
