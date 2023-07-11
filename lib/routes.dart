@@ -24,6 +24,8 @@ class Routes {
 
   static final Handler roomDetailHandler = Handler(
       handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+    /// 1、左边?.右边 如果左边为null则返回null，如果左边不为null则返回右边；
+    /// 2、左边!.右边 如果左边为null则抛出异常,代码不会再继续向下执行，如果左边不为null则返回右边。
     return RoomDetailPage(roomId: params['roomId']![0]);
   });
 
