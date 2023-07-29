@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'index_recommend_data_widget.dart';
 import 'index_recommond_data.dart';

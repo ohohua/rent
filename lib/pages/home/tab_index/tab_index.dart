@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/common_swiper.dart';
+import '../../../widgets/common_swiper.dart';
+import '../info/index.dart';
 import 'index_navigator.dart';
 import 'index_recommond.dart';
 
@@ -18,6 +19,7 @@ class TabIndex extends StatelessWidget {
           CommonSwiper(), // 轮播图
           IndexNavigator(),
           IndexRecommend(),
+          Info(),
         ],
       ),
     );

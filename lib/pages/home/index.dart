@@ -1,6 +1,6 @@
 // 引入基础库
 import 'package:flutter/material.dart';
-import 'package:rent/pages/home/tab_index.dart';
+import 'package:rent/pages/home/tab_index/tab_index.dart';
 // 引入自定义组件
 import 'package:rent/widgets/page_content.dart';
 
