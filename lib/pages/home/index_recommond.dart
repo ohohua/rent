@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'index_recommend_data_widget.dart';
 import 'index_recommond_data.dart';
 
 class IndexRecommend extends StatelessWidget {
@@ -9,25 +10,24 @@ class IndexRecommend extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(color: Color(0x80000000)),
+      decoration: const BoxDecoration(color: Colors.grey),
       child: Column(
         children: <Widget>[
-          const Row(
-            children: <Widget>[
-              Text('房屋推荐'),
-              Text('更多'),
-            ],
+          const Padding(
+            padding: EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text('房屋推荐'),
+                Text('更多'),
+              ],
+            ),
           ),
           Wrap(
               spacing: 10.0,
               runSpacing: 10.0,
               children: dataList
-                  .map((item) => Container(
-                        decoration: const BoxDecoration(color: Colors.red),
-                        width:
-                            (MediaQuery.of(context).size.width - 10.0 * 3) / 2,
-                        height: 100.0,
-                      ))
+                  .map((item) => IndexRecommendDataWidget(data: item))
                   .toList())
         ],
       ),
