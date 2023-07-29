@@ -1,15 +1,16 @@
 // 引入基础库
 import 'package:flutter/material.dart';
 import 'package:rent/pages/home/tab_index/tab_index.dart';
+import 'package:rent/pages/home/tab_info/index.dart';
 // 引入自定义组件
 import 'package:rent/widgets/page_content.dart';
 
 // 1.需要准备 4 个 tab内容区（tabView）
 List<Widget> tabViewList = [
   const TabIndex(),
-  const PageContent(name: '首页'),
   const PageContent(name: '搜索'),
-  const PageContent(name: '咨询'),
+  // const PageContent(name: '咨询'),
+  const TabInfo(),
   const PageContent(name: '我的'),
 ];
 

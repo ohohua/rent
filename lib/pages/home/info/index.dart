@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'data.dart';
+import 'item_widget.dart';
 
 class Info extends StatelessWidget {
   final bool showTitle;
@@ -11,14 +12,18 @@ class Info extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        const Text('最新資訊'),
+        if (showTitle)
+          Container(
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.all(10.0),
+            child: const Text(
+              '最新資訊',
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+            ),
+          ),
         Column(
-          children: infoItem
-              .map((f) => Container(
-                    height: 100,
-                    decoration: const BoxDecoration(color: Colors.red),
-                  ))
-              .toList(),
+          children: infoItem.map((f) => ItemWidget(data: f)).toList(),
         )
       ],
     );

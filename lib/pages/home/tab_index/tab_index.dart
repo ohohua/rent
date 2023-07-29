@@ -19,7 +19,9 @@ class TabIndex extends StatelessWidget {
           CommonSwiper(), // 轮播图
           IndexNavigator(),
           IndexRecommend(),
-          Info(),
+          Info(
+            showTitle: true,
+          ),
         ],
       ),
     );
